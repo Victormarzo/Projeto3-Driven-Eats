@@ -1,19 +1,23 @@
 body{
-    max-width: 614px;
+    max-width: 414px;
     margin: auto;
     font-family: 'Righteous', cursive;
     font-family: 'Roboto', sans-serif;
     background: #E5E5E5;  
+    position: relative;
 }
 *{
     box-sizing: border-box;
 }
 .menusup{
-    width:auto;
+    width:100%;
     background: #CF2B2B;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 14px;
+    padding-left: 20px;
+    position: fixed;
+    top: 0;
+
     
 }
 .menusup h1{
@@ -40,8 +44,8 @@ body{
 .prato{
     display: flex;
     overflow-x: scroll;
-    margin:16px;
-}
+    padding-left: 20px;
+        }
 .opcao{
     width: 172px;
     height: 216px; 
@@ -49,6 +53,7 @@ body{
     border: solid 1px grey;
     border-radius: 9px;
     background-color: #FFFFFF;
+    margin-right: 16px;
 }
 .opcao h2{
     display: inline-block;
@@ -84,4 +89,53 @@ body{
 .opcao div{
     display: flex;
     justify-content: center;
+}
+.titulo{
+    font-family: 'Righteous';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+    letter-spacing: 0.018em;
+    color: #333333;
+    margin:30px 0 20px 20px;
+
+}
+.menuinf{
+    height: 92px;
+    width: 100%;
+    background-color: #FFFFFF;
+    position:fixed;
+    bottom: 0;
+    z-index: 1;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont{
+    margin-top: 122px;
+    margin-bottom: 122px;
+}
+.botao{
+    width: 364px;
+    height: 61px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#cdcdcd;
+    border-radius: 50px;
+    
+}
+.botao p{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.018em;
+    color: #FFFFFF; 
+}
+.pronto{
+    background-color: #32B72F;
+    display: none;
 }
