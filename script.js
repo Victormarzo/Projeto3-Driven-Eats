@@ -1,3 +1,17 @@
+let total;
+let prato;
+let bebida;
+let sobremesa;
+let pratoPreco;
+let bebidaPreco;
+let sobremesaPreco;
+let texto;
+let pedido;
+let nome;
+let endereco;
+
+
+
 function clicaprato(elemento){
     const liga = document.querySelector(".comida .selecionado ");
     
@@ -5,24 +19,38 @@ function clicaprato(elemento){
     liga.classList.remove("selecionado");
     }
     elemento.classList.add("selecionado"); 
-    liberacompra()
+
+    prato=elemento.querySelector(".nomeComida");
+   
+   pratoPreco = elemento.querySelector(".precoComida")
+   
+    liberacompra();
+    
 }
 function clicabebida(elemento){
     const liga = document.querySelector(".bebida .selecionado ");
     if (liga !== null){
     liga.classList.remove("selecionado");
     }
-    elemento.classList.add("selecionado"); 
-    liberacompra()
+    elemento.classList.add("selecionado");
+    bebida=elemento.querySelector(".nomeBebida");
+   
+   bebidaPreco = elemento.querySelector(".precoBebida")
+   
+    liberacompra();
 }
 function clicasobremesa(elemento){
     const liga = document.querySelector(".sobremesa .selecionado ");
     if (liga !== null){
     liga.classList.remove("selecionado");
     }
-    elemento.classList.add("selecionado"); 
+    elemento.classList.add("selecionado");
+    sobremesa=elemento.querySelector(".nomeSobremesa");
+   
+   sobremesaPreco = elemento.querySelector(".precoSobremesa")
+   
     
-    liberacompra()
+    liberacompra();
 }
 function clicapratotik(elemento){
     const liga = elemento.querySelector(".comida .tik ");
@@ -61,4 +89,31 @@ function liberacompra(){
         naopronto.classList.add("pronto") ;
         
     }
+}
+function fazerPedido(){
+    total=Number(pratoPreco.innerHTML)+Number(bebidaPreco.innerHTML)+Number(sobremesaPreco.innerHTML);
+    
+    nome=prompt("Digite seu nome:");
+    endereco=prompt("Digite seu endereço:");
+    texto=`Olá, gostaria de fazer o pedido:
+    - Prato: ${prato.innerHTML}
+    - Bebida: ${bebida.innerHTML}
+    - Sobremesa: ${sobremesa.innerHTML}
+    Total: R$ ${total.toFixed(2)}
+
+    Nome: ${nome}
+    Endereço: ${endereco}`
+    console.log(texto);
+    pedido = encodeURIComponent(texto);
+    msgZap();;
+
+    
+}
+function confirma(){
+    
+    
+    
+}
+function msgZap(){
+    window.location.href =`https://wa.me/5541999024887?text=${pedido}`
 }
