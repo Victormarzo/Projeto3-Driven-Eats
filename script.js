@@ -24,6 +24,7 @@ function clicaprato(elemento){
    
    pratoPreco = elemento.querySelector(".precoComida")
    
+   
     liberacompra();
     
 }
@@ -91,7 +92,7 @@ function liberacompra(){
     }
 }
 function fazerPedido(){
-    total=Number(pratoPreco.innerHTML)+Number(bebidaPreco.innerHTML)+Number(sobremesaPreco.innerHTML);
+    total=Number(pratoPreco.innerHTML.replace(",","."))+Number(bebidaPreco.innerHTML.replace(",","."))+Number(sobremesaPreco.innerHTML.replace(",","."));
     
     nome=prompt("Digite seu nome:");
     endereco=prompt("Digite seu endereço:");
@@ -102,18 +103,11 @@ function fazerPedido(){
     Total: R$ ${total.toFixed(2)}
 
     Nome: ${nome}
-    Endereço: ${endereco}`
-    console.log(texto);
+    Endereço: ${endereco}`;
+    
     pedido = encodeURIComponent(texto);
-    msgZap();;
-
-    
-}
-function confirma(){
-    
-    
-    
+    msgZap();
 }
 function msgZap(){
-    window.location.href =`https://wa.me/5541999024887?text=${pedido}`
+    window.location.href =`https://wa.me/5541999024887?text=${pedido}`;
 }
